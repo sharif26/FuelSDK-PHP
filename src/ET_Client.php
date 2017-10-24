@@ -188,7 +188,7 @@ class ET_Client extends SoapClient
 
         $soapOptions = array(
             'trace'=>1,
-            'exceptions'=>0,
+            'exceptions'=>false,
             'connection_timeout'=>120,
         );
         if (!empty($this->proxyHost)) {
@@ -217,7 +217,7 @@ class ET_Client extends SoapClient
 	{
 		
 		if (property_exists($this, "sdl") && $this->sdl == 0){
-			parent::__construct($this->xmlLoc, array('trace'=>1, 'exceptions'=>0));	
+			parent::__construct($this->xmlLoc, array('trace'=>1, 'exceptions'=>false));	
 		}
 		try {
 			$currentTime = new DateTime();
